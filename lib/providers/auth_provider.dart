@@ -23,7 +23,6 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-
   Future<void> registerUser(Map<String, dynamic> data) async {
     try {
       isLoading = true;

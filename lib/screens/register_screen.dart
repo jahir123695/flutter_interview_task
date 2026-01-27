@@ -20,32 +20,46 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final auth = context.watch<AuthProvider>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Register")),
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: Color(0xff2d4a4c),
+        title: const Text("Register"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
+            SizedBox(height: 150),
             TextField(
               controller: name,
-              decoration: const InputDecoration(labelText: "Name"),
+              decoration: InputDecoration(labelText: "Name"),
             ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
               controller: email,
-              decoration: const InputDecoration(labelText: "Email"),
+              decoration: InputDecoration(labelText: "Email"),
             ),
             TextField(
+              keyboardType: TextInputType.phone,
               controller: phone,
-              decoration: const InputDecoration(labelText: "Phone"),
+              decoration: InputDecoration(labelText: "Phone"),
             ),
             TextField(
               controller: password,
               obscureText: true,
-              decoration: const InputDecoration(labelText: "Password"),
+              decoration: InputDecoration(labelText: "Password"),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             auth.isLoading
-                ? const CircularProgressIndicator()
+                ? Center(child: const CircularProgressIndicator(color:  Color(0xff2d4a4c),))
                 : ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff2d4a4c),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(7),
+                      ),
+                    ),
                     onPressed: () async {
                       await auth.registerUser({
                         "name": name.text,

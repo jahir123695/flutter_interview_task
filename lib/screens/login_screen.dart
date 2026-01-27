@@ -26,20 +26,34 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              keyboardType: TextInputType.emailAddress,
               controller: email,
               decoration: InputDecoration(labelText: "Email"),
             ),
             TextField(
+              keyboardType: TextInputType.visiblePassword,
               controller: password,
               obscureText: true,
               decoration: InputDecoration(labelText: "Password"),
             ),
             const SizedBox(height: 20),
             auth.isLoading
-                ? const CircularProgressIndicator()
+                ? Center(
+                    child: const CircularProgressIndicator(
+                      color: Color(0xff2d4a4c),
+                    ),
+                  )
                 : ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff2d4a4c),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(7),
+                      ),
+                    ),
                     onPressed: () async {
                       try {
                         await auth.loginWithEmailPass(
@@ -58,9 +72,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: const Text("Login"),
                   ),
-            TextButton(
-              onPressed: () => Navigator.pushNamed(context, '/register'),
-              child: Text("Create account"),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'I don`t have an account ',
+                  style: TextStyle(color: Colors.grey),
+                ),
+                SizedBox(width: 3),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/register'),
+                  child: Text(
+                    'Register ',
+                    style: TextStyle(
+                      color: Color(0xff2d4a4c),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
