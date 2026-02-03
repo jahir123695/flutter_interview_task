@@ -1,20 +1,37 @@
-<<<<<<< HEAD
-# flutter_interview_task
+#  Flutter Collections Accordion UI
 
-A new Flutter project.
+This project is a Flutter assignment demonstrating an **accordion-style product collections screen**.
 
-## Getting Started
+Users can expand a collection to view product images horizontally, similar to modern e-commerce apps.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+##  Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Scrollable list of collections
+- Accordion expand & collapse animation
+- Only **one collection open at a time**
+- Smooth UI animations
+- Horizontal product image preview
+- “+N” overlay when extra images exist
+- Rounded cards with elevation
+- Clean and modular Flutter code structure
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# flutter_interview_task
->>>>>>> 14ac8bae771f25200df5f7434efd97dc70b677b3
+---
+
+##  Implementation Approach
+
+### State Management
+A `StatefulWidget` is used on the home screen with an `expandedIndex` variable to control which collection is open. This ensures only one accordion is expanded at a time.
+
+### Animations Used
+- `AnimatedSize` for smooth expansion and collapse  
+- `AnimatedRotation` for rotating the dropdown arrow icon  
+
+### UI Structure
+The app is broken into reusable components:
+- **Model** → Defines collection data  
+- **Card Widget** → Reusable accordion UI  
+- **Screen** → Controls list and state  
+
+
