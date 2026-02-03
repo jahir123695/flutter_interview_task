@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int expandedIndex = -1; // Only one open at a time
+  int expandedIndex = -1;
 
   void toggleAccordion(int index) {
     setState(() {
@@ -21,7 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Collections")),
+      backgroundColor: Color(0xfff5f5f5),
+      appBar: AppBar(
+        title: const Text("Collections"),
+        backgroundColor: Color(0xff216584),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.all(12),
         itemCount: collections.length,

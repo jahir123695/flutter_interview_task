@@ -19,12 +19,12 @@ class CollectionCard extends StatelessWidget {
     final extraCount = collection.images!.length - visibleImages!.length;
 
     return Card(
+      color: Colors.white,
       elevation: 4,
       margin: const EdgeInsets.only(bottom: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Column(
         children: [
-          /// HEADER (Always Visible)
           InkWell(
             borderRadius: BorderRadius.circular(16),
             onTap: onTap,
@@ -50,7 +50,6 @@ class CollectionCard extends StatelessWidget {
             ),
           ),
 
-          /// EXPANDABLE IMAGE SECTION
           AnimatedSize(
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,

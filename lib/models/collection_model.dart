@@ -29,8 +29,8 @@ List<CollectionModel> collections = [
   CollectionModel(
     title: "Shoes Collection",
     images: [
-      "https://veaves.in/cdn/shop/files/VE_MS_53_2.jpg?v=1749200052&width=2500",
-      "https://image.suratwholesaleshop.com/data/2022y/August/33935/Wedding-Wear-Sky-Blue-Weaving-Work-Heavy-Imported-Jacquard-Italian-Indo-Western-RANGBAAZ22-2210.jpg",
+      "https://rukminim2.flixcart.com/image/480/640/xif0q/shoe/7/d/4/6-195-40-asteroid-black-original-imah7byzffjfevkg.jpeg?q=90",
+      "https://www.campusshoes.com/cdn/shop/files/VESPER_VESPER_L.GRY-M.BLU_07.webp?v=1758174842",
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519",
